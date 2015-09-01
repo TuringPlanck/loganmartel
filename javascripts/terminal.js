@@ -189,7 +189,7 @@
     };
 
     Terminal.prototype.cd = function() {
-      return this.print("I'm sorry Dave but I can't let you do that...");
+      return this.print("I'm sorry, Dave. I'm afraid I can't you do that.");
     };
 
     Terminal.prototype.gandalf = function() {

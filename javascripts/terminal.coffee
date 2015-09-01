@@ -128,7 +128,7 @@ class Terminal
 		@print ("1. #{command}<br>") for command in @secrets
 
 	cd: ->
-		@print("I'm sorry Dave but I can't let you do that...")
+		@print("I'm sorry, Dave. I'm afraid I can't you do that.")
 
 	gandalf: ->
 		window.open("https://youtu.be/Sagg08DrO5U")

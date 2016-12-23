@@ -11,7 +11,7 @@
       this.PS1 = PS1 != null ? PS1 : "$ ";
       this.welcome = welcome != null ? welcome : "./hello_friend";
       this.guide = guide != null ? guide : "Run 'help' for basic commands";
-      this.commands = commands != null ? commands : ["about", "projects", "skills", "resume", "interests", "clear", "ls", "help"];
+      this.commands = commands != null ? commands : ["about", "projects", "skills", "resume", "interests", "glass_sort", "clear", "ls", "help"];
       this.broadcasts = broadcasts != null ? broadcasts : ["about", "projects", "skills", "resume"];
       this.secrets = secrets != null ? secrets : ["gandalf"];
       instance = this;
@@ -176,6 +176,10 @@
       return this.print("Shoot me an email if you want to work together!");
     };
 
+    Terminal.prototype.glass_sort = function() {
+      return window.open("http://loganmartel.me/GlassSort/");
+    };
+
     Terminal.prototype.ls = function() {
       var command, i, len, ref, results1;
       this.print("Hey, secret commands will be updated here as they are added:<br>");
@@ -189,7 +193,7 @@
     };
 
     Terminal.prototype.cd = function() {
-      return this.print("I'm sorry, Dave. I'm afraid I can't you do that.");
+      return this.print("I'm sorry, Dave. I'm afraid I can't let you do that.");
     };
 
     Terminal.prototype.gandalf = function() {

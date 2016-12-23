@@ -6,7 +6,7 @@ class Terminal
 	,	@PS1="$ " 
 	,	@welcome="./hello_friend"
 	,	@guide="Run 'help' for basic commands"
-	,	@commands= ["about", "projects", "skills", "resume", "interests", "clear","ls", "help"]
+	,	@commands= ["about", "projects", "skills", "resume", "interests", "glass_sort", "clear","ls", "help"]
 	,	@broadcasts= ["about", "projects", "skills", "resume"]
 	,	@secrets = ["gandalf"]
 	) ->
@@ -17,7 +17,7 @@ class Terminal
 		# build basic broadcasting commands
 		(instance[command] = -> instance["broadcast"](command)) for command in @broadcasts
 		
-		# enable ctrl + l to clear terminalinte
+		# enable ctrl + l to clear terminal
 		$(document).keydown (e) ->
 			if e.which == 76 && e.ctrlKey
 				e.preventDefault()
@@ -123,12 +123,15 @@ class Terminal
 		@print("biotech (esp. bioinformatics)<br>")
 		@print("Shoot me an email if you want to work together!")
 
+	glass_sort: ->
+		window.open("http://loganmartel.me/GlassSort/")
+
 	ls: ->
 		@print("Hey, secret commands will be updated here as they are added:<br>")
 		@print ("1. #{command}<br>") for command in @secrets
 
 	cd: ->
-		@print("I'm sorry, Dave. I'm afraid I can't you do that.")
+		@print("I'm sorry, Dave. I'm afraid I can't let you do that.")
 
 	gandalf: ->
 		window.open("https://youtu.be/Sagg08DrO5U")

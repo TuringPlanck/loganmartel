@@ -118,7 +118,7 @@ class Terminal
 
 	interests: ->
 		@print("Hey, I'm looking for projects in:<br>")
-		@print("data science (esp. data mining)<br>")
+		@print("machine learning (esp. NLP)<br>")
 		@print("back-end (mobile or web)<br>")
 		@print("biotech (esp. bioinformatics)<br>")
 		@print("Shoot me an email if you want to work together!")

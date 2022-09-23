@@ -5,12 +5,13 @@
   Terminal = (function() {
     var command_line;
 
-    function Terminal(target, PS1, welcome, guide, commands, broadcasts, secrets) {
+    function Terminal(target, PS1, welcome, guide, warning, commands, broadcasts, secrets) {
       var command, history, i, index, instance, len, ref;
       this.target = target != null ? target : ".shell .text";
       this.PS1 = PS1 != null ? PS1 : "$ ";
       this.welcome = welcome != null ? welcome : "./hello_friend";
       this.guide = guide != null ? guide : "Run 'help' for basic commands";
+      this.warning = warning != null ? warning : "FYI: you'll find my **new** personal site at https://martelogan.dev/";
       this.commands = commands != null ? commands : ["about", "projects", "skills", "resume", "interests", "glass_sort", "clear", "ls", "help"];
       this.broadcasts = broadcasts != null ? broadcasts : ["about", "projects", "skills", "resume"];
       this.secrets = secrets != null ? secrets : ["gandalf"];
@@ -140,7 +141,7 @@
         this.broadcast("go");
         return $(document).on("done", (function(_this) {
           return function() {
-            _this.print("<br> " + _this.guide);
+            _this.print("<br> " + _this.guide + " <br> " + _this.warning);
             return _this.newline();
           };
         })(this));

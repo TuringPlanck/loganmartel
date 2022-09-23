@@ -2,10 +2,11 @@
 # Extensible class for terminal emulator in web application
 class Terminal
 	constructor:\
-	(	@target=".shell .text" 
-	,	@PS1="$ " 
+	(	@target=".shell .text"
+	,	@PS1="$ "
 	,	@welcome="./hello_friend"
 	,	@guide="Run 'help' for basic commands"
+  , @warning="FYI: you'll find my **new** personal site at https://martelogan.dev/"
 	,	@commands= ["about", "projects", "skills", "resume", "interests", "glass_sort", "clear","ls", "help"]
 	,	@broadcasts= ["about", "projects", "skills", "resume"]
 	,	@secrets = ["gandalf"]
@@ -16,7 +17,7 @@ class Terminal
 
 		# build basic broadcasting commands
 		(instance[command] = -> instance["broadcast"](command)) for command in @broadcasts
-		
+
 		# enable ctrl + l to clear terminal
 		$(document).keydown (e) ->
 			if e.which == 76 && e.ctrlKey
@@ -48,9 +49,9 @@ class Terminal
 				for command in options
 					if command.substr(0, str.length) is str
 						results.push(command)
-				
+
 				return if results.length is 0
-				
+
 				else if results.length is 1
 					return input.val(results[0])
 
@@ -73,7 +74,7 @@ class Terminal
 					if command in ["init","newline"]
 						throw "no h4x0rs allowed!"
 					if command.substr(0,2) == "cd"
-						console.log instance["cd"]() 
+						console.log instance["cd"]()
 					else instance["#{command}"]()
 					history.push(command)
 					index = history.length
@@ -91,7 +92,7 @@ class Terminal
 	print: (element) ->
 		$target = $(@target)
 		$target.append(element)
-	
+
 	newline: ->
 		@print("<br> #{@PS1}")
 		@print(command_line)
@@ -104,9 +105,9 @@ class Terminal
 		else
 			@broadcast("go")
 			$(document).on "done", =>
-				@print("<br> #{@guide}")
+				@print("<br> #{@guide} <br> #{@warning}")
 				@newline()
-	
+
 	help: ->
 		@print ("#{command}<br>") for command in @commands when command isnt "help"
 

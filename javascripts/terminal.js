@@ -11,7 +11,7 @@
       this.PS1 = PS1 != null ? PS1 : "$ ";
       this.welcome = welcome != null ? welcome : "./hello_friend";
       this.guide = guide != null ? guide : "Run 'help' for basic commands";
-      this.warning = warning != null ? warning : "FYI: you'll find my **new** personal site at https://martelogan.dev/";
+      this.warning = warning != null ? warning : "FYI: you'll find my **new** personal site at <a href=\"https://martelogan.dev/\">martelogan.dev</a>";
       this.commands = commands != null ? commands : ["about", "projects", "skills", "resume", "interests", "glass_sort", "clear", "ls", "help"];
       this.broadcasts = broadcasts != null ? broadcasts : ["about", "projects", "skills", "resume"];
       this.secrets = secrets != null ? secrets : ["gandalf"];

@@ -6,7 +6,7 @@ class Terminal
 	,	@PS1="$ "
 	,	@welcome="./hello_friend"
 	,	@guide="Run 'help' for basic commands"
-  , @warning="FYI: you'll find my **new** personal site at https://martelogan.dev/"
+  , @warning="FYI: you'll find my **new** personal site at <a href=\"https://martelogan.dev/\">martelogan.dev</a>"
 	,	@commands= ["about", "projects", "skills", "resume", "interests", "glass_sort", "clear","ls", "help"]
 	,	@broadcasts= ["about", "projects", "skills", "resume"]
 	,	@secrets = ["gandalf"]
